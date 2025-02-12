@@ -128,6 +128,12 @@ ff02::2 ip6-allrouters
 
 Для корректной работы кластера необходимо настроить SSH-доступ без пароля между всеми узлами.
 
+### 2.0. Проверка установлен ли OpenSSH
+```bash
+systemctl status ssh
+```
+Если, OpenSSH установлен, переходите к шагу 2.2 
+
 ### 2.1. Установка OpenSSH  
 На каждом узле установите SSH-сервер:
 ```bash
@@ -149,12 +155,12 @@ ssh-copy-id <имя_ноды>
 Например:
 ```bash
 ssh-copy-id team-76-nn
-ssh-copy-id team-76-dn-0
-ssh-copy-id team-76-dn-1
+ssh-copy-id team-76-dn-00
+ssh-copy-id team-76-dn-01
 ```
 Проверьте, что теперь можно зайти с мастера на другие ноды по SSH без ввода пароля:
 ```bash
-ssh team-76-dn-0
+ssh team-76-dn-00
 ```
 
 ---
