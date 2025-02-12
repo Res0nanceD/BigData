@@ -37,11 +37,67 @@ sudo apt update && sudo apt upgrade -y
 ### 1.2. Настройка файла /etc/hosts  
 Чтобы ноды могли узнавать имена друг друга, на всех узлах (jump node, name node и DataNode) откройте файл `/etc/hosts` и добавьте следующие строки (убедитесь, что в этом файле отсутствуют избыточные записи типа “localhost”, которые могут мешать разрешению имен):
 
+для jump node файл `/etc/hosts` должен выглядеть вот так:
 ```
-192.168.1.14 team-76-jn
-192.168.1.15 team-76-nn
-192.168.1.16 team-76-dn-0
-192.168.1.17 team-76-dn-1
+127.0.0.1       localhost
+127.0.1.1       team-76-jn
+
+192.168.1.15    team-76-nn
+192.168.1.16    team-76-dn-00
+192.168.1.17    team-76-dn-01
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+```
+для name node:
+```
+127.0.0.1 localhost
+127.0.1.1 team-76-nn
+192.168.1.14    team-76-jn
+192.168.1.16    team-76-dn-00
+192.168.1.17    team-76-dn-01
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+```
+для data node 0:
+```
+127.0.0.1 localhost
+127.0.1.1 team-76-dn-00
+
+192.168.1.14    team-76-jn
+192.168.1.16    team-76-dn-00
+192.168.1.17    team-76-dn-01
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+```
+для data node 1:
+```
+127.0.0.1 localhost
+127.0.1.1 team-76-dn-01
+192.168.1.14    team-76-jn
+192.168.1.15    team-76-nn
+192.168.1.16    team-76-dn-00
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
 ```
 
 Проверьте, что при пинге по именам (например, `ping team-76-nn`) система корректно разрешает адреса.
