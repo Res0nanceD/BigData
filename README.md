@@ -1,9 +1,13 @@
 # BigData - инструкция по установке кластера hadoop
 
 ## Архитектура:
+
 team-76-jn: 192.168.1.14 - jump node
+
 team-76-nn:   192.168.1.15 - на этой виртуальной машине будут располагаться: name_node, secondary name_node, data_node_1
+
 team-76-dn-00    192.168.1.16 - data_node_2
+
 team-76-dn-01    192.168.1.17 - data_node_3
 
 ---
