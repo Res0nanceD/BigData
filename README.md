@@ -54,21 +54,6 @@ ff02::2 ip6-allrouters
 для `team-76-nn`:
 ```
 127.0.0.1 localhost
-127.0.1.1 team-76-nn
-192.168.1.14    team-76-jn
-192.168.1.16    team-76-dn-00
-192.168.1.17    team-76-dn-01
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-```
-тестим
-```
-127.0.0.1 localhost
 192.168.1.15 team-76-nn
 192.168.1.14    team-76-jn
 192.168.1.16    team-76-dn-00
@@ -81,6 +66,7 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
+* важно поменять `127.0.1.1 team-76-nn` на `192.168.1.15 team-76-nn`
 для `team-76-dn-00`:
 ```
 127.0.0.1 localhost
