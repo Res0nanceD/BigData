@@ -237,7 +237,12 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```bash
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
-### 4.5 Проверим что все установлено
+### 4.5 Обобщение
+Для того чтобы преременные окружения не слетали каждый раз при перезаходе запишем их в файл
+```bash
+vim ~/.profile
+```
+Проверим что все установлено
 ```bash
 hadoop version
 ```
