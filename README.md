@@ -286,13 +286,13 @@ hadoop version
 *Примечание:* На узле team-76-nn будет запущен и DataNode, поэтому для него создается и рабочая директория.
 
 ### 5.3. Распространение конфигурации  
-Скопируйте настроенные файлы `core-site.xml` и `hdfs-site.xml` с мастера (team-76-nn) на все DataNode (team-76-dn-0 и team-76-dn-1). Это можно сделать с помощью scp или rsync:
+Скопируйте настроенные файлы `core-site.xml` и `hdfs-site.xml` с мастера (team-76-nn) на все DataNode (team-76-dn-00 и team-76-dn-01). Это можно сделать с помощью scp или rsync:
 ```bash
-scp /opt/hadoop/etc/hadoop/core-site.xml team-76-dn-0:/opt/hadoop/etc/hadoop/
-scp /opt/hadoop/etc/hadoop/hdfs-site.xml team-76-dn-0:/opt/hadoop/etc/hadoop/
+scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/core-site.xml hadoopuser@team-76-dn-00:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
+scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/hdfs-site.xml hadoopuser@team-76-dn-00:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
 
-scp /opt/hadoop/etc/hadoop/core-site.xml team-76-dn-1:/opt/hadoop/etc/hadoop/
-scp /opt/hadoop/etc/hadoop/hdfs-site.xml team-76-dn-1:/opt/hadoop/etc/hadoop/
+scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/core-site.xml hadoopuser@team-76-dn-01:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
+scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/hdfs-site.xml hadoopuser@team-76-dn-01:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
 ```
 
 ---
