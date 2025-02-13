@@ -31,11 +31,11 @@ sudo vim /etc/hosts
 ```
 Для перехода на другую виртуальную машину:
 ```bash
-sss 192.168.1.15
+ssh 192.168.1.15
 ```
 ip отличаться в зависимости от виртуальной машины
 
-для jump node файл `/etc/hosts` должен выглядеть вот так:
+для `team-76-jn` файл `/etc/hosts` должен выглядеть вот так:
 ```
 127.0.0.1       localhost
 127.0.1.1       team-76-jn
@@ -51,7 +51,7 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
-для name node:
+для `team-76-nn`:
 ```
 127.0.0.1 localhost
 127.0.1.1 team-76-nn
@@ -66,11 +66,10 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
-для data node 0:
+тестим
 ```
 127.0.0.1 localhost
-127.0.1.1 team-76-dn-00
-
+192.168.1.15 team-76-nn
 192.168.1.14    team-76-jn
 192.168.1.16    team-76-dn-00
 192.168.1.17    team-76-dn-01
@@ -82,7 +81,23 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
-для data node 1:
+для `team-76-dn-00`:
+```
+127.0.0.1 localhost
+127.0.1.1 team-76-dn-00
+
+192.168.1.14    team-76-jn
+192.168.1.15    team-76-nn
+192.168.1.17    team-76-dn-01
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+```
+для `team-76-dn-01`:
 ```
 127.0.0.1 localhost
 127.0.1.1 team-76-dn-01
@@ -361,8 +376,21 @@ start-dfs.sh
   ```
 
 ### 7.2. Проверка запуска HDFS
+Мы можем посмотреть запущенные демоны командой
 ```bash
 jps
+```
+на namenode мы увидим:
+```
+86180 NameNode
+87145 Jps
+86362 DataNode
+86575 SecondaryNameNode
+```
+на datanode'ах мы увидим:
+```
+87145 Jps
+86362 DataNode
 ```
 
 ### 7.3. Логи  
@@ -370,6 +398,8 @@ jps
 ```bash
 tail -n 50 hadoop-3.4.1/logs/<имя_ноды>.log
 tail -n 50 hadoop-3.4.1/logs/hadoop-hadoopuser-namenode-team-76-nn.log
+# или для просмотра в реальном времени:
+tail -f hadoop-hadoopuser-datanode-team-76-dn-00.log
 ```
 
 ---
