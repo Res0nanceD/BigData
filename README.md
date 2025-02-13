@@ -200,21 +200,29 @@ wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzf hadoop-3.4.1.tar.gz
 ```
 
-### 4.2. Настройка переменных окружения  
+### 4.2. Настройка переменных окружения HADOOP_HOME
 Перейдите в созданную директорию hadoop-3.4.1 и скопируйте путь к ней:
 ```bash
 cd hadoop-3.4.1
 pwd
 ```
-скорее всего путь будет выглядить вот так: **/home/hadoopuser/hadoop-3.4.1**
+скорее всего путь будет выглядить вот так: **/home/hadoopuser/hadoop-3.4.1**, используйте его для добавления переменной окружения:
 ```bash
-export HADOOP_HOME=/opt/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64  # путь может отличаться, проверьте вашу установку
+export HADOOP_HOME=/home/hadoopuser/hadoop-3.4.1
 ```
-Примените изменения:
+### 4.3. Настройка переменных окружения JAVA_HOME
 ```bash
-source ~/.bashrc
+which java
+readlink -f /usr/bin/java
+```
+Полученный путь вставляем в переменную java
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+```
+### 4.4. Настройка переменных окружения PATH
+Добавим папки исполняемые hadoop в переменную окружения path:
+```bash
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
 
 ---
