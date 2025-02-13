@@ -267,16 +267,16 @@ hadoop version
   <!-- Директория для NameNode -->
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>file:///opt/hadoop/dfs/name</value>
+    <value>file:///home/hadoopuser/hadoop-3.4.1/dfs/name</value>
   </property>
 
   <!-- Директория для DataNode -->
   <property>
     <name>dfs.datanode.data.dir</name>
-    <value>file:///opt/hadoop/dfs/data</value>
+    <value>file:///home/hadoopuser/hadoop-3.4.1/dfs/data</value>
   </property>
 
-  <!-- Задаем коэффициент репликации, равный числу DataNode (3) -->
+  <!-- Задаем коэффициент репликации -->
   <property>
     <name>dfs.replication</name>
     <value>3</value>
