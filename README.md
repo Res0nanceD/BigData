@@ -261,7 +261,7 @@ hadoop version
 
 ### 5.2. Файл hdfs-site.xml  
 Настройте директории для хранения метаданных и данных, а также коэффициент репликации.
-Откройте файл `$HADOOP_HOME/etc/hadoop/core-site.xml` и добавьте (или измените) следующий блок:
+Откройте файл `$HADOOP_HOME/etc/hadoop/hdfs-site.xml` и добавьте (или измените) следующий блок:
 ```xml
 <configuration>
   <!-- Директория для NameNode -->
