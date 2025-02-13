@@ -198,7 +198,7 @@ ssh team-76-dn-00
 ```bash
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzf hadoop-3.4.1.tar.gz
-sudo mv hadoop-3.4.1 /opt/hadoop
+# sudo mv hadoop-3.4.1 /opt/hadoop
 ```
 
 ### 4.2. Настройка переменных окружения  
