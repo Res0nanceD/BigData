@@ -230,7 +230,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 Выходим из фала и добавляем переменную окружения:
 ```bash
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 ### 4.4. Настройка переменных окружения PATH
 Добавим папки исполняемые hadoop в переменную окружения path:
@@ -245,7 +245,7 @@ vim ~/.profile
 Добавляем эти строчки внизу файла:
 ```
 export HADOOP_HOME=/home/hadoopuser/hadoop-3.4.1
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
 и перезапускаем командой:
@@ -310,6 +310,13 @@ scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/hdfs-site.xml hadoopuser@team-76-dn
 scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/core-site.xml hadoopuser@team-76-dn-01:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
 scp /home/hadoopuser/hadoop-3.4.1/etc/hadoop/hdfs-site.xml hadoopuser@team-76-dn-01:/home/hadoopuser/hadoop-3.4.1/etc/hadoop/
 ```
+### 5.4. Настройка узлов datanode
+Откройте файл `$HADOOP_HOME/etc/hadoop/workers` на namenode и запишите туда нужные узлы
+```bash
+team-76-nn
+team-76-dn-00
+team-76-dn-01
+```
 
 ---
 
@@ -347,6 +354,10 @@ start-dfs.sh
 - На каждом DataNode (team-76-dn-00 и team-76-dn-01):
   ```bash
   hadoop-daemon.sh start datanode
+  ```
+  Чтобы остановить
+  ```bash
+  hadoop-daemon.sh stop datanode
   ```
 
 ### 7.2. Проверка запуска HDFS
