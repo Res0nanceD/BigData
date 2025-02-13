@@ -349,7 +349,12 @@ start-dfs.sh
   hadoop-daemon.sh start datanode
   ```
 
-### 7.2. Логи  
+### 7.2. Проверка запуска HDFS
+```bash
+jps
+```
+
+### 7.3. Логи  
 Логи демонов располагаются в каталоге `$HADOOP_HOME/logs`. Проверьте их на наличие критических ошибок:
 ```bash
 tail -n 50 /opt/hadoop/logs/*namenode*.log
