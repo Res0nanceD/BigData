@@ -242,6 +242,17 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```bash
 vim ~/.profile
 ```
+Добавляем эти строчки внизу файла:
+```
+export HADOOP_HOME=/home/hadoopuser/hadoop-3.4.1
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+```
+и перезапускаем командой:
+```bash
+source ~/.profile
+```
+
 Проверим что все установлено
 ```bash
 hadoop version
