@@ -213,9 +213,22 @@ export HADOOP_HOME=/home/hadoopuser/hadoop-3.4.1
 ### 4.3. Настройка переменных окружения JAVA_HOME
 ```bash
 which java
+```
+После того как выяснили какая у нас java уточняем путь до нее:
+```bash
 readlink -f /usr/bin/java
 ```
-Полученный путь вставляем в переменную java
+Копируем полученный путь до /bin. Путь будет выглядеть так: **/usr/lib/jvm/java-11-openjdk-amd64**
+
+Перейдем в файл **hadoop-env.sh** 
+```bash
+vim $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+```
+В нем расскоментируем строку JAVA_HOME и пропишем нужный путь:
+```
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
+Выходим из фала и добавляем переменную окружения:
 ```bash
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
