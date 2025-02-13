@@ -357,8 +357,8 @@ jps
 ### 7.3. Логи  
 Логи демонов располагаются в каталоге `$HADOOP_HOME/logs`. Проверьте их на наличие критических ошибок:
 ```bash
-tail -n 50 /opt/hadoop/logs/*namenode*.log
-tail -n 50 /opt/hadoop/logs/*datanode*.log
+tail -n 50 /hadoop4.3.1/hadoop/logs/<имя ноды>.log
+tail -n 50 /hadoop4.3.1/hadoop/logs/<имя ноды>.log
 ```
 
 ---
