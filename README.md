@@ -192,9 +192,8 @@ ssh team-76-dn-00
 ---
 
 ## 4. Установка Hadoop
-
-### 4.1. Загрузка и распаковка Hadoop  
-На всех узлах скачайте стабильную версию Hadoop (например, 3.3.1) с официального сайта:
+На всех узлах (team-76-nn, team-76-dn-00, team-76-dn-01) выполните следующие шаги:
+### 4.1. Загрузка и распаковка Hadoop
 ```bash
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzf hadoop-3.4.1.tar.gz
@@ -210,6 +209,7 @@ pwd
 ```bash
 export HADOOP_HOME=/home/hadoopuser/hadoop-3.4.1
 ```
+
 ### 4.3. Настройка переменных окружения JAVA_HOME
 ```bash
 which java
