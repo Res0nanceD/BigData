@@ -169,6 +169,12 @@ ssh team-76-dn-00
 
 Hadoop требует установленную Java. Рекомендуется использовать OpenJDK 8 или выше.
 
+### 3.0 Проверьте или у Вас уже установлена Java:
+```bash
+java -version
+```
+Если уже установлена переходите к пункту 4
+
 ### 3.1. Установка JDK  
 На каждом узле:
 ```bash
@@ -188,7 +194,7 @@ java -version
 ### 4.1. Загрузка и распаковка Hadoop  
 На всех узлах скачайте стабильную версию Hadoop (например, 3.3.1) с официального сайта:
 ```bash
-wget https://downloads.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
+wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzf hadoop-3.3.1.tar.gz
 sudo mv hadoop-3.3.1 /opt/hadoop
 ```
