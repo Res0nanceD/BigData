@@ -66,7 +66,7 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
-* важно поменять `127.0.1.1 team-76-nn` на `192.168.1.15 team-76-nn`
+**Важно:** поменять `127.0.1.1 team-76-nn` на `192.168.1.15 team-76-nn`, иначе namenode не будет слушать datanode на других виртуалках
 для `team-76-dn-00`:
 ```
 127.0.0.1 localhost
