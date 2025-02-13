@@ -198,11 +198,15 @@ ssh team-76-dn-00
 ```bash
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzf hadoop-3.4.1.tar.gz
-# sudo mv hadoop-3.4.1 /opt/hadoop
 ```
 
 ### 4.2. Настройка переменных окружения  
-Добавьте следующие строки в файл `~/.bashrc` (или `~/.profile`):
+Перейдите в созданную директорию hadoop-3.4.1 и скопируйте путь к ней:
+```bash
+cd hadoop-3.4.1
+pwd
+```
+скорее всего путь будет выглядить вот так: **/home/hadoopuser/hadoop-3.4.1**
 ```bash
 export HADOOP_HOME=/opt/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
