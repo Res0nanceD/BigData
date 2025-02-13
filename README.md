@@ -318,7 +318,7 @@ start-dfs.sh
 ```
 Скрипт `start-dfs.sh` автоматически запустит:
 - На team-76-nn: **NameNode**, **Secondary NameNode** и **DataNode**;
-- На team-76-dn-0 и team-76-dn-1: **DataNode**.
+- На team-76-dn-00 и team-76-dn-01: **DataNode**.
 
 Если автоматический запуск по каким-то причинам не срабатывает, можно запускать демоны вручную:
 
@@ -328,7 +328,7 @@ start-dfs.sh
   hadoop-daemon.sh start secondarynamenode
   hadoop-daemon.sh start datanode
   ```
-- На каждом DataNode (team-76-dn-0 и team-76-dn-1):
+- На каждом DataNode (team-76-dn-00 и team-76-dn-01):
   ```bash
   hadoop-daemon.sh start datanode
   ```
