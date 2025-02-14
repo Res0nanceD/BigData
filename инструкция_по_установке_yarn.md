@@ -88,7 +88,7 @@ vim $HADOOP_HOME/etc/hadoop/yarn-site.xml
 3. Добавьте (или измените) следующие свойства:
 
    ```xml
-    <configuration>
+   <configuration>
     <!-- Использование YARN в качестве фреймворка для MapReduce -->
     <property>
         <name>mapreduce.framework.name</name>
@@ -118,7 +118,7 @@ vim $HADOOP_HOME/etc/hadoop/yarn-site.xml
         <name>mapreduce.jobhistory.intermediate-done-dir</name>
         <value>/home/hadoopuser/hadoop-3.4.1/dfs/data/history/intermediate</value>
     </property>
-    </configuration>
+   </configuration>
    ```
 
 4. Создайте указанные директории для History Server (на мастер-ноде, team-76-nn):
