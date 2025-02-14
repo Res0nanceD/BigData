@@ -176,7 +176,7 @@ jps
 - **team-76-nn (мастер):**
   - `ResourceManager`
   - `NodeManager`
-  - `SecondaryNameNode` (и другие HDFS демоны, если запущены)
+  - HDFS демоны, если запущены (`NameNode`, `SecondaryNameNode`, `DataNode`)
   - `JobHistoryServer`
   
 - **team-76-dn-00 и team-76-dn-01 (DataNode):**
