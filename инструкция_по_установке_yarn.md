@@ -194,23 +194,15 @@ jps
 
 2. **Откройте необходимые порты в firewall (если используется).**
 
-Например, если на ваших нодах используется **ufw**, выполните:
-
-- На мастере (team-76-nn):
-  ```bash
-  sudo ufw allow 8088/tcp    # ResourceManager web-интерфейс
-  sudo ufw allow 19888/tcp   # History Server web-интерфейс
-  sudo ufw allow 8042/tcp    # Если на мастере запущен NodeManager
+- Для доступа к веб-интерфейсу ResourceManager
+  На вашем компьюетере выполните команду:
   ```
-- На DataNode-ах (team-76-dn-00 и team-76-dn-01):
-  ```bash
-  sudo ufw allow 8042/tcp    # NodeManager web-интерфейс
+  ssh -L 8088:team-76-nn:8088 -N -f hadoopuser@X.X.X.X
   ```
+  > **Важно** `X.X.X.X` замените на ip вашего сервера
+  эта команда перебросит ваш localhost:8088 на 8088 порт namenode и Вы сможете смотреть веб-интерфейс ResourceManager по адресу:
+  http://localhost:8088
 
-Если используется другой firewall, откройте соответствующие порты:
-- **ResourceManager:** 8088
-- **NodeManager:** 8042
-- **History Server:** 19888
 
 ---
 
