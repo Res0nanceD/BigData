@@ -88,7 +88,6 @@ vim $HADOOP_HOME/etc/hadoop/yarn-site.xml
 3. Добавьте (или измените) следующие свойства:
 
 ```xml
-<?xml version="1.0"?>
 <configuration>
   <!-- Использование YARN в качестве фреймворка для MapReduce -->
   <property>
