@@ -87,39 +87,40 @@ vim $HADOOP_HOME/etc/hadoop/yarn-site.xml
 
 3. Добавьте (или измените) следующие свойства:
 
-   ```xml
-   <configuration>
-    <!-- Использование YARN в качестве фреймворка для MapReduce -->
-    <property>
-        <name>mapreduce.framework.name</name>
-        <value>yarn</value>
-    </property>
+```xml
+<?xml version="1.0"?>
+<configuration>
+  <!-- Использование YARN в качестве фреймворка для MapReduce -->
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
 
-    <!-- Задаем classpath для MapReduce приложений -->
-    <property>
-        <name>mapreduce.application.classpath</name>
-        <value>$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*</value>
-    </property>
+  <!-- Задаем classpath для MapReduce приложений -->
+  <property>
+    <name>mapreduce.application.classpath</name>
+    <value>$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*</value>
+  </property>
 
-    <!-- Настройки History Server для хранения и отображения истории заданий -->
-    <property>
-        <name>mapreduce.jobhistory.address</name>
-        <value>team-76-nn:10020</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.webapp.address</name>
-        <value>team-76-nn:19888</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.done-dir</name>
-        <value>/home/hadoopuser/hadoop-3.4.1/dfs/data/history/done</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.intermediate-done-dir</name>
-        <value>/home/hadoopuser/hadoop-3.4.1/dfs/data/history/intermediate</value>
-    </property>
-   </configuration>
-   ```
+  <!-- Настройки History Server для хранения и отображения истории заданий -->
+  <property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>team-76-nn:10020</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>team-76-nn:19888</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.done-dir</name>
+    <value>/home/hadoopuser/hadoop-3.4.1/dfs/data/history/done</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.intermediate-done-dir</name>
+    <value>/home/hadoopuser/hadoop-3.4.1/dfs/data/history/intermediate</value>
+  </property>
+</configuration>
+```
 
 4. Создайте указанные директории для History Server (на мастер-ноде, team-76-nn):
    ```bash
